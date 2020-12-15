@@ -20,10 +20,10 @@ rm -rf \
 
 CODE_SERVER_VERSION=3.7.4
 
-mkdir /opt/code-server && \
-cd /opt/code-server && \
+mkdir -p /opt/bin/code-server && \
+cd /opt/bin/code-server && \
 wget -qO- https://github.com/cdr/code-server/releases/download/v$CODE_SERVER_VERSION/code-server-$CODE_SERVER_VERSION-linux-amd64.tar.gz| tar zxf - --strip-components=1 && \
-echo 'export PATH=/opt/code-server:$PATH' >> /home/ubuntu/.domino-defaults && \
+echo 'export PATH=/opt/bin/code-server:$PATH' >> /home/ubuntu/.domino-defaults && \
 apt-get purge --auto-remove -y \
   libx11-dev \
   libxkbfile-dev \
