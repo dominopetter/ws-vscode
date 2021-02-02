@@ -6,7 +6,8 @@ cd /tmp/rstudio-temp
 apt-get update && apt-get install -y gdebi libapparmor1
 wget  -q https://s3.amazonaws.com/rstudio-ide-build/server/bionic/amd64/rstudio-server-1.4.1103-amd64.deb
 gdebi -n rstudio-server-1.4.1103-amd64.deb
-ln -sf /usr/lib/rstudio-server /usr/local/lib/rstudio-server 
+ln -sf /usr/lib/rstudio-server /usr/local/lib/rstudio-server
+chown -R root:root /usr/lib/rstudio-server
 cd ~
 rm -rf /tmp/rstudio-temp
 
@@ -18,8 +19,3 @@ ln -sf /usr/lib/rstudio-server/bin/pandoc/pandoc /usr/local/bin
 ln -sf /usr/lib/rstudio-server/bin/pandoc/pandoc-citeproc /usr/local/bin
 
 rm -rf /var/lib/apt/lists/*
-
-# Fix R 1.4 permission issues
-chown -R ubuntu:ubuntu /usr/lib/rstudio-server
-chown -R ubuntu:ubuntu /var/run/rstudio-server
-chown -R ubuntu:ubuntu /var/lib/rstudio-server
