@@ -2,9 +2,9 @@
 # set -o nounset -o errexit -o pipefail
 mkdir -p /tmp/rstudio-temp
 cd /tmp/rstudio-temp
-# apt-get update && apt-get install -y libapparmor1
+apt-get update && apt-get install -y gdebi
 wget  -q wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.4.1103-amd64.deb
-dpkg -i rstudio-server-1.4.1103-amd64.deb
+gdebi -n rstudio-server-1.4.1103-amd64.deb
 ln -sf /usr/lib/rstudio-server /usr/local/lib/rstudio-server
 chown -R root:root /usr/lib/rstudio-server
 cd ~
