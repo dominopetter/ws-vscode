@@ -11,7 +11,7 @@ chown -R root:root /usr/lib/rstudio-server
 cd ~
 rm -rf /tmp/rstudio-temp
 
-echo "www-frame-origin=any" >> /etc/rstudio/rserver.conf
+echo "www-frame-origin=any" > /etc/rstudio/rserver.conf
 chown ubuntu:ubuntu /etc/rstudio/rserver.conf
 
 #Make rmarkdown::render work outside of rstudio. https://github.com/rstudio/rmarkdown/blob/master/PANDOC.md
