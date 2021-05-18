@@ -9,12 +9,3 @@ vscode:
     port: 8888
     requireSubdomain: false
 ```
-```
-rstudio:
-  title: "RStudio"
-  iconUrl: "/assets/images/workspace-logos/Rstudio.svg"
-  start: [ "/var/opt/workspaces/rstudio/start" ]
-  httpProxy:
-    port: 8888
-    requireSubdomain: false
-```
